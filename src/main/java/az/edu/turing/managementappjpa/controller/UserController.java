@@ -2,7 +2,7 @@ package az.edu.turing.managementappjpa.controller;
 
 import az.edu.turing.managementappjpa.domain.entity.UserEntity;
 import az.edu.turing.managementappjpa.model.UserDto;
-import az.edu.turing.managementappjpa.service.impl.UserServiceImpl;
+import az.edu.turing.managementappjpa.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import java.util.Optional;
 public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     @PostMapping
     public void createUser(@RequestBody UserDto userDto) {
@@ -67,3 +67,7 @@ public class UserController {
         return userService.countUsers();
     }
 }
+
+//  facade and strategy pattern
+//   docs.spring.io/spring-data/jpa/reference/repositories      (projections qeder)
+// vavr
